@@ -173,7 +173,7 @@ function loadFans() {
   .then(response => response.json())
   .then(data => {
     data.list.forEach(fan => {
-        addFanToGrid(fan);
+        fan.username && addFanToGrid(fan);
     });
   })
   .catch(error => console.error('Error:', error));
